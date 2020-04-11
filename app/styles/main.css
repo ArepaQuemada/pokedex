@@ -1,0 +1,68 @@
+*{
+    margin: auto;
+}
+
+body {
+    background: linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%);
+    font-family: 'Roboto', sans-serif;
+}
+
+#title-div {
+    background-color: #313131;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+#container-button {
+    padding: 1rem;
+    text-align: center;
+}
+
+#container-button button:hover {
+    border: solid 1px black;
+    background-color: whitesmoke;
+    color: black;
+}
+
+#container-button button{
+    margin: 1rem;
+    width: 8rem;
+    height: 3rem;
+    background-color: #313131;
+    border: none;
+    color: white;
+    font-size: 1rem;
+}
+
+#container-pokemon {
+    padding: 1rem;
+    text-align: center;
+}
+
+.div-pokemon {
+    width: 8rem;
+    height: 10rem;
+    background-color: whitesmoke;
+    border-radius: 15%;
+    display: inline-block;
+    border: 1px solid black;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0.3rem;
+    box-shadow: -1px -4px 13px 0px rgba(0,0,0,0.20);
+}
+
+#div-pokemon img {
+    width: 6rem;
+    height: 6rem;
+}
+
+.types {
+    margin: 0.1rem;
+    font-size: 0.8rem;
+}
+
+.id {
+    color: gray;
+}
