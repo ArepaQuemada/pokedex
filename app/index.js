@@ -1,6 +1,5 @@
 //Handle api response
 function handleResponse(generation) {
-    console.log('consumiendo API');
     const url = `https://pokeapi.co/api/v2/generation/${generation}/`
     //gets data from generation
     fetch(url)
