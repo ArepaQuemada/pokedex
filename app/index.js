@@ -38,3 +38,10 @@ function showInDom(pokemon) {
     `
     document.querySelector('#container-pokemon').appendChild(div);
 }
+
+function handleDelete(e) {
+    const nodes = document.querySelectorAll('.div-pokemon');
+    for(element of nodes) {
+        element.parentNode.removeChild(element);
+    }
+}
