@@ -1,48 +1,22 @@
 async function handleResponse(generation) {
+    const GENERATION = setGenerationObject(generation);
     showCounter();
-    const url = `https://pokeapi.co/api/v2/generation/${generation}/`
-    const generationJson = await getGeneration(url);
-    
-    let event = new CustomEvent('add-pokemon', {'detail': generationJson.pokemon_species});
-
-    for(element of generationJson.pokemon_species) {
-        let pokemon = await getPokemon(element.url);
-        showInDom(pokemon, event);
+    for(let i = GENERATION.first ; i <= GENERATION.last; i++) {
+        const pokemon = await getPokemon(i);
+        showInDom(pokemon, GENERATION.total);
     }
 }
 
-function showCounter() {
-    document.querySelector('#counter').style.display = 'block';
+function setGenerationObject(generation) {
+    for(let i in GENERATIONS) {
+        if(generation === GENERATIONS[i].generation_number){
+            return GENERATIONS[i];
+        }
+    }
 }
 
-async function getGeneration (url) {
-    const response = await fetch(url);
-    return response.json();
-}
-
-async function getPokemon(url) {
-    const newUrl = url.replace('pokemon-species', 'pokemon')
-    const response = await fetch(newUrl);
-    return response.json();
-}
-
-function showInDom(pokemon, event) {
-    let sprite = pokemon.sprites.front_default;
-    let title = pokemon.species.name;
-    let id = pokemon.id;
-    let firstType = pokemon.types[0].type.name;
-    let secondType = pokemon.types.length > 1 ? pokemon.types[1].type.name : '';
-    let div = document.createElement('div');
-    div.className = 'div-pokemon';
-    div.innerHTML = `
-        <h4>${title}<h4>
-        <small class="id">#00${id}</small>
-        <img src='${sprite}'>
-        <div class="types">
-            <span class=${firstType.toLowerCase()}>${firstType}</span>
-            <span clasS=${secondType.toLowerCase()}>${secondType}</span>
-        </div>
-    `
-    document.querySelector('#container-pokemon').appendChild(div);
-    this.dispatchEvent(event);
+async function getPokemon(number) {
+    const url = `https://pokeapi.co/api/v2/pokemon/${number}/`
+    const pokemonJson = await fetch(url);
+    return pokemonJson.json();
 }

@@ -5,7 +5,7 @@ let counterElement = document.querySelector('#counter');
 this.addEventListener('add-pokemon', (e) => {
     counterElement.innerHTML = counter;
     counter++;
-    if(counter === e.detail.length) {
+    if(counter === e.detail) {
         hideCounter();
         enableButton();
     }
@@ -15,6 +15,10 @@ function hideCounter() {
     setTimeout(()=> {
         counterElement.style.display = 'none';
     }, 2000);
+}
+
+function showCounter() {
+    document.querySelector('#counter').style.display = 'block';
 }
 
 function handleDelete(e) {
