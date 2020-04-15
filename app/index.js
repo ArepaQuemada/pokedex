@@ -1,11 +1,18 @@
 async function handleResponse(generation) {
+    showCounter();
     const url = `https://pokeapi.co/api/v2/generation/${generation}/`
     const generationJson = await getGeneration(url);
+    
+    let event = new CustomEvent('add-pokemon', {'detail': generationJson.pokemon_species});
 
     for(element of generationJson.pokemon_species) {
         let pokemon = await getPokemon(element.url);
-        showInDom(pokemon);
+        showInDom(pokemon, event);
     }
+}
+
+function showCounter() {
+    document.querySelector('#counter').style.display = 'block';
 }
 
 async function getGeneration (url) {
@@ -19,7 +26,7 @@ async function getPokemon(url) {
     return response.json();
 }
 
-function showInDom(pokemon) {
+function showInDom(pokemon, event) {
     let sprite = pokemon.sprites.front_default;
     let title = pokemon.species.name;
     let id = pokemon.id;
@@ -37,11 +44,5 @@ function showInDom(pokemon) {
         </div>
     `
     document.querySelector('#container-pokemon').appendChild(div);
-}
-
-function handleDelete(e) {
-    const nodes = document.querySelectorAll('.div-pokemon');
-    for(element of nodes) {
-        element.parentNode.removeChild(element);
-    }
+    this.dispatchEvent(event);
 }

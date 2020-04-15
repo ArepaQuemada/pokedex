@@ -22,11 +22,13 @@
         <button id="unova" onclick="handleResponse(5)">Get Unova Pokemon</button>
         <button id="kalos" onclick="handleResponse(6)">Get Kalos Pokemon</button>
         <button id="alola" onclick="handleResponse(7)">Get Alola Pokemon</button>
-        <button id="delete" onclick="handleDelete(this)">Delete Pokemon</button>
+        <button id="delete" onclick="handleDelete(this)" disabled>Delete Pokemon</button>
     </div>
+    <div id="counter" style="display: none;"></div>
     <div id="container-pokemon">
     </div>
     <script src="index.js"></script>
+    <script src="event.js"></script>
 </body>
 
 </html>
