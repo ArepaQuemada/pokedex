@@ -57,6 +57,10 @@ body {
     box-shadow: -1px -4px 13px 0px rgba(0,0,0,0.20);
 }
 
+.alola {
+    height: 12rem;
+}
+
 #div-pokemon img {
     width: 6rem;
     height: 6rem;

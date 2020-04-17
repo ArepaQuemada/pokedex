@@ -3,7 +3,7 @@ async function handleResponse(generation) {
     showCounter();
     for(let i = GENERATION.first ; i <= GENERATION.last; i++) {
         const pokemon = await getPokemon(i);
-        showInDom(pokemon, GENERATION.total);
+        showInDom(pokemon, GENERATION);
     }
 }
 
