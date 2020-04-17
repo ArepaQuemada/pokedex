@@ -19,7 +19,7 @@ const GENERATIONS = {
     },
     4: {
         generation_number: 4,
-        firts: 387,
+        first: 387,
         last: 493,
         total: 106
     },
