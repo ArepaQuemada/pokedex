@@ -44,6 +44,11 @@ body {
     text-align: center;
 }
 
+a {
+    text-decoration: solid;
+    color: #000000;
+}
+
 .div-pokemon {
     width: 8rem;
     height: 10rem;
