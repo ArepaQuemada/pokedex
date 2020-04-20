@@ -1,10 +1,13 @@
 async function handleResponse(generation) {
     const GENERATION = setGenerationObject(generation);
     showCounter();
+    disableButton();
     for(let i = GENERATION.first ; i <= GENERATION.last; i++) {
         const pokemon = await getPokemon(i);
         handleShowInDom(pokemon, GENERATION);
     }
+    hideCounter();
+    enableButton();
 }
 
 function setGenerationObject(generation) {
