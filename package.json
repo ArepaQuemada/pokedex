@@ -1,0 +1,24 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "Simple pokedex ",
+  "main": "index.js",
+  "homepage": "http://ArepaQuemada.github.io/pokedex",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArepaQuemada/pokedex.git"
+  },
+  "author": "Juan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArepaQuemada/pokedex/issues"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.0.0"
+  }
+}
