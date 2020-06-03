@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="App/styles/main.css">
+    <link rel="stylesheet" href="App/styles/types/types.css">
+</head>
+
+<body>
+    <div id="title-div">
+        <h1>Poke Dex</h1>
+    </div>
+    <div id="container-button">
+        <button id="kanto" onclick="handleResponse(1)">Get Kanto Pokemon</button>
+        <button id="johto" onclick="handleResponse(2)">Get Johto Pokemon</button>
+        <button id="hoenn" onclick="handleResponse(3)">Get Hoenn Pokemon</button>
+        <button id="sinnoh" onclick="handleResponse(4)">Get Sinnoh Pokemon</button>
+        <button id="unova" onclick="handleResponse(5)">Get Unova Pokemon</button>
+        <button id="kalos" onclick="handleResponse(6)">Get Kalos Pokemon</button>
+        <button id="alola" onclick="handleResponse(7)">Get Alola Pokemon</button>
+        <button id="delete" onclick="handleDelete(this)" disabled>Delete Pokemon</button>
+    </div>
+    <div id="counter" style="display: none;"></div>
+    <div id="container-pokemon">
+    </div>
+    <script src="App/index.js"></script>
+    <script src="App/domHandler.js"></script>
+    <script src="App/event.js"></script>
+    <script src="App/utils.js"></script>
+</body>
+
+</html>
